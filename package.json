@@ -1,5 +1,5 @@
 {
-  "name": "vue3_cli_default",
+  "name": "sanVue",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",

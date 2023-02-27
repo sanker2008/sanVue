@@ -3,6 +3,7 @@ import router from 'vue-router';
 
 axios.defaults.baseURL = import.meta.env.VITE_BASE_URL;
 
+console.log(import.meta.env.VITE_BASE_URL)
 
 axios.interceptors.request.use(
 	async config => {
