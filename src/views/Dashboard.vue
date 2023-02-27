@@ -4,6 +4,7 @@
 
 <script setup>
 	
+	ElMessageBox('1212')
 </script>
 
 <style>
