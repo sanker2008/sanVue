@@ -10,7 +10,7 @@ import 'element-plus/dist/index.css'
 //import HelloWorldVue from './components/HelloWorld.vue'
 */
 import App from './App.vue'
-import pinia from './store'
+import pinia from './stores'
 import piniaPersist from 'pinia-plugin-persist'
 pinia.use(piniaPersist)
 createApp(App).use(router).use(pinia).use(Axios)/*.use(ElementPlus)*/.mount('#app')
