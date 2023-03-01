@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite'
+import { viteMockServe } from 'vite-plugin-mock'
 import vue from '@vitejs/plugin-vue'
 // 按需自动导入ElementPlus组件和图标
 import AutoImport from 'unplugin-auto-import/vite'
@@ -11,6 +12,10 @@ const { resolve } = require("path");
 export default defineConfig({
   plugins: [
 	  vue(),
+	  viteMockServe({
+		  mockPath: '/mock',
+		  localEnabled: true
+	  }),
 	  AutoImport({
 		resolvers: [
 			ElementPlusResolver(),

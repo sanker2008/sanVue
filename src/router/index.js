@@ -44,6 +44,9 @@ router.beforeEach((to,from,next) => {
 })
 // 全局解析守卫，调用时机：在 beforeEach(to, from, next)和组件内beforeRouteEnter(to, from, next)之后，afterEach(to, from)之前调用
 router.beforeResolve((to,from,next) => {
+	const defaultTitle = 'sanVue Project'
+	document.title = to.meta.title?to.meta.title:defaultTitle
+	
 	next()
 // ...
 })
