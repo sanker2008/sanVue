@@ -3,8 +3,9 @@
 </template>
 
 <script setup>
+	import { io } from 'socket.io-client'
 	
-	ElMessageBox('1212')
+	// ElMessageBox('1212')
 </script>
 
 <style>

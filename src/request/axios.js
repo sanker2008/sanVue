@@ -37,9 +37,9 @@ axios.interceptors.response.use(
 	}
 )
 
-const $get = (url, params) =>{
+const $get = (params) =>{
 	return new Promise((resolve, reject) => {
-		axios.get(url, {
+		axios.get(Axios.defaults.baseURL, {
 			params: params
 		})
 		.then(res => {
@@ -51,9 +51,9 @@ const $get = (url, params) =>{
 	})
 }
 
-const $post = (url, params) =>{
+const $post = (params) =>{
 	return new Promise((resolve, reject) => {
-		axios.post(url, QS.stringify(params)) // 将对象 序列化成URL的形式，以&进行拼接
+		axios.post(Axios.defaults.baseURL, QS.stringify(params)) // 将对象 序列化成URL的形式，以&进行拼接
 		.then(res => {
 			resolve(res.data)
 		})

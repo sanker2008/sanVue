@@ -6,10 +6,10 @@ export const useMenuStore = defineStore('menuKeys', () => {
 	const permList = ref([])
 	
 	function setMenuList(menus){
-		menuList.value = menus
+		//menuList.value = menus
 	}
 	function setPermList(authoritys) {
-	    permList.value = authoritys
+	    //permList.value = authoritys
 	}
 	return {
 		menuList,
