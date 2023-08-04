@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import router from './router'
 import Axios from '@/request/axios.js'
-
+import 'virtual:uno.css'
 console.log(Axios)
 /*
 安装插件按需自动引入：npm install -D unplugin-vue-components unplugin-auto-import unplugin-icons
