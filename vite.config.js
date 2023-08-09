@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite'
+import { viteMockServe } from 'vite-plugin-mock'
 import vue from '@vitejs/plugin-vue'
 // 按需自动导入ElementPlus组件和图标
 import AutoImport from 'unplugin-auto-import/vite'
@@ -11,19 +12,27 @@ const { resolve } = require("path");
 export default defineConfig({
   plugins: [
 	  vue(),
+	  viteMockServe({
+		  mockPath: '/mock',
+		  localEnabled: true
+	  }),
 	  AutoImport({
 		resolvers: [
+			// 自动导入 Element Plus 组件
 			ElementPlusResolver(),
+			// 自动导入图标组件 https://iconify.design/
 			IconResolver({
-				prefix: 'Icon'
+				prefix: 'i'
 			})
 		],
 	  }),
 	  Components({
 		resolvers: [
+			// 自动注册 Element Plus 组件
 			ElementPlusResolver(),
+			// 自动注册图标组件 https://iconify.design/
 			IconResolver({
-				enabledCollections: ['ep']
+				//enabledCollections: ['ep','ph']
 			})
 		],
 	  }),
@@ -46,6 +55,6 @@ export default defineConfig({
 	  }
   },
   server: {
-	  
+	  hmr: true
   }
 })

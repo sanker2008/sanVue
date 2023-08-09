@@ -11,5 +11,6 @@ import 'element-plus/dist/index.css'
 */
 import App from './App.vue'
 import pinia from './store'
-
+import piniaPersist from 'pinia-plugin-persist'
+pinia.use(piniaPersist)
 createApp(App).use(router).use(pinia).use(Axios)/*.use(ElementPlus)*/.mount('#app')
